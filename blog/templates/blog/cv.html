@@ -1,0 +1,39 @@
+
+
+{% extends 'blog/base.html' %}
+
+<d{% block content %}
+
+   
+  
+        <h1>Tom Soppitt</h1>
+        <p id="bio_left">
+           07523945350<br />
+        </p>
+        <p id="bio_right">
+            32 Salisbury Road<br />
+            Bristol,BS67AT
+        </p>
+       
+        <p>References available upon request</p>
+
+        <h3><a href="{% url 'skill_new' %}">Skills</a></h3>
+        {% for skill in skills %}
+        
+
+<h4>{{ skill.skill }}</h4>
+
+<p>{{ skill.detail|truncatechars:250 }}</p>
+
+{% endfor %}
+
+        <h3>Work Experience</h3>
+       
+       
+        <h3>Positions of Responsibilty</h3>
+
+        <h3>Hobbies</h3>
+       
+
+
+{% endblock %}

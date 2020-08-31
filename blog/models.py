@@ -14,3 +14,19 @@ class Post(models.Model):
         self.save()
     def __str__(self):
         return self.title
+
+        
+class Skill(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    skill = models.CharField(max_length=200)
+    detail = models.TextField()
+    
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+    def __str__(self):
+        return self.skill
+       
+        
