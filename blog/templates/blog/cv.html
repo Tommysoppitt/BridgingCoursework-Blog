@@ -1,11 +1,31 @@
 
 
-{% extends 'blog/base.html' %}
+{% load static %}
+<html>
+<head>
+<title>Tom Soppitt's CV</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+    <div class="page-header">
+    
+        <a href="/" class="top-menu"><span>Tom's Blog</span></a>
+    <h1><a href="/cv">Tom Soppitt's CV</a></h1>
+    </div>
+    <div class="content container">
+    <div class="row">
+    <div class="col-md-8">
+    {% block content %}
+    {% endblock %}
+    </div>
+    </div>
+    </div>
+    
+    </body>
 
-<d{% block content %}
-
-   
-  
+<body>
         <h1>Tom Soppitt</h1>
         <p id="bio_left">
            07523945350<br />
@@ -23,17 +43,38 @@
 
 <h4>{{ skill.skill }}</h4>
 
-<p>{{ skill.detail|truncatechars:250 }}</p>
+<p>{{ skill.detail }}</p>
 
 {% endfor %}
 
-        <h3>Work Experience</h3>
-       
-       
-        <h3>Positions of Responsibilty</h3>
+<h3><a href="{% url 'experience_new' %}">Experience</a></h3>
+{% for experience in experience %}
+        
 
-        <h3>Hobbies</h3>
+<h4>{{ experience.experience }}</h4>
+
+<p>{{ experience.detail }}</p>
+
+{% endfor %}
        
+<h3><a href="{% url 'responsibility_new' %}">Positions of Responsibility</a></h3>
+{% for responsibility in responsibilities %}
+        
 
+<h4>{{ responsibility.responsibility }}</h4>
 
-{% endblock %}
+<p>{{ responsibility.detail }}</p>
+
+{% endfor %}
+<h3><a href="{% url 'hobby_new' %}">Hobbies and Interests</a></h3>
+       
+{% for hobby in hobbies %}
+        
+
+<h4>{{ hobby.hobby }}</h4>
+
+<p>{{ hobby.detail }}</p>
+
+{% endfor %}
+</body>
+</html>

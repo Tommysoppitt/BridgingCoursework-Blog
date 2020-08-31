@@ -20,7 +20,6 @@ class Skill(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     skill = models.CharField(max_length=200)
     detail = models.TextField()
-    
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     def publish(self):
@@ -28,5 +27,21 @@ class Skill(models.Model):
         self.save()
     def __str__(self):
         return self.skill
-       
+class Responsibility(models.Model):
+    responsibility = models.CharField(max_length=200)
+    detail = models.TextField()
+    def __str__(self):
+        return self.responsibility      
+        
+class Experience(models.Model):
+    experience = models.CharField(max_length=200)
+    detail = models.TextField()
+    def __str__(self):
+        return self.experience   
+        
+class Hobby(models.Model):
+    hobby = models.CharField(max_length=200)
+    detail = models.TextField()
+    def __str__(self):
+        return self.hobby     
         
