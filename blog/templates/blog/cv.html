@@ -27,17 +27,19 @@
 
 <body>
         <h1>Tom Soppitt</h1>
-        <p text-align: right;>
-           07523345350
+        <p>32 Salisbury Road
+           Bristol, BS67AT</p>
+           <p>07523945350
         </p>
-        <p id="bio_right">
-            32 Salisbury Road<br />
-            Bristol,BS37AT
-        </p>
-       
-       
+        <h3><u>Education</u></h3>  
+        <h4>MSci Mathematics and Computer Science at the University of Birmingham</h4>
+         <p>Predicted 1st Class Degree</p>
+        <h4>A Level</h4>
+         <p>A*-Mathematics  |    A-Chemistry  |    A-Further Mathematics    |  B-Physics  |    A-Biology(AS Level)</p>
+         <h4>GCSE</h4>
+         <p>10 A*</p>
 
-        <h3><a href="{% url 'skill_new' %}">Skills</a></h3>
+        <h3><a href="{% url 'skill_new' %}"><u>Skills</u></a></h3>
         {% for skill in skills %}
         
 
@@ -47,7 +49,7 @@
 
 {% endfor %}
 
-<h3><a href="{% url 'experience_new' %}">Experience</a></h3>
+<h3><a href="{% url 'experience_new' %}"><u>Experience</u></a></h3>
 {% for experience in experience %}
         
 
@@ -57,7 +59,7 @@
 
 {% endfor %}
        
-<h3><a href="{% url 'responsibility_new' %}">Positions of Responsibility</a></h3>
+<h3><a href="{% url 'responsibility_new' %}"><u>Positions of Responsibility</u></a></h3>
 {% for responsibility in responsibilities %}
         
 
@@ -66,7 +68,7 @@
 <p>{{ responsibility.detail }}</p>
 
 {% endfor %}
-<h3><a href="{% url 'hobby_new' %}">Hobbies and Interests</a></h3>
+<h3><a href="{% url 'hobby_new' %}"><u>Hobbies and Interests</u></a></h3>
        
 {% for hobby in hobbies %}
         
@@ -76,6 +78,6 @@
 <p>{{ hobby.detail }}</p>
 
 {% endfor %}
-<p style="text-align:center" colour=red>References available upon request</centre></p>
+<p style="text-align:center" color="red">References available upon request</p>
 </body>
 </html>
