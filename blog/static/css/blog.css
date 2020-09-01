@@ -37,7 +37,18 @@ body {}
     h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
     }
-
+    #bio_left {
+        font-size: 75%;
+        float: left;
+        width: 350px;
+    }
+    
+    #bio_right {
+        font-size: 75%;
+        float: left;
+        text-align: right;
+        width: 350px;
+    }
     .date {
     color: #828282;
     }

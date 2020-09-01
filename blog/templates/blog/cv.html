@@ -27,15 +27,15 @@
 
 <body>
         <h1>Tom Soppitt</h1>
-        <p id="bio_left">
-           07523345350<br />
+        <p text-align: right;>
+           07523345350
         </p>
         <p id="bio_right">
             32 Salisbury Road<br />
             Bristol,BS37AT
         </p>
        
-        <p>References available upon request</p>
+       
 
         <h3><a href="{% url 'skill_new' %}">Skills</a></h3>
         {% for skill in skills %}
@@ -76,5 +76,6 @@
 <p>{{ hobby.detail }}</p>
 
 {% endfor %}
+<p style="text-align:center" colour=red>References available upon request</centre></p>
 </body>
 </html>
